@@ -1,4 +1,5 @@
 import { HotelSearchForm } from "@/components/forms/SearchHotelForm";
+import { Banner } from "@/components/Banner";
 
 export default function Index(){
     return (
@@ -7,10 +8,9 @@ export default function Index(){
             bg-cover bg-center 
             h-screen w-full
             relative
-            text-white
             ">
             <div className="absolute inset-0 bg-black/60"></div>
-            <div className="relative z-10 flex items-center justify-center h-full">
+            <div className="text-white relative z-10 flex items-center justify-center h-full">
                 <div>
                     <div className="text-center">
                         <div>
@@ -26,6 +26,7 @@ export default function Index(){
                     <HotelSearchForm />
                 </div>
             </div>
+            <Banner />
         </div>
     )
 }
