@@ -46,27 +46,29 @@ export function Promotion(){
                     Discover amazing places around the world
                 </div>
             </div>
-            <div className="items-center justify-center flex flex-cols-1 sm:flex-cols-2 md:flex-cols-4 gap-4">
-                {images.map((image, i) => (
-                    <Card key={i} className="transform transition-transform duration-300 hover:scale-105 hover:shadow-lg overflow-hidden relative rounded-md w-80 p-0 pb-4">
-                        <div className="relative">
-                            <img src={image.image} alt="" className="w-full h-40 object-cover"/>
-                        </div>
-                        <CardContent>
-                            <CardTitle className="text-xl font-semibold">
-                                {image.label}
-                            </CardTitle>
-                            <CardDescription className="flex flex-col gap-2">
-                                <div>
-                                    {image.country}
-                                </div>
-                                <div className="text-cyan-500 font-semibold">
-                                    {image.properties} properties
-                                </div>
-                            </CardDescription>
-                        </CardContent>
-                    </Card>
-                ))}
+            <div className="items-center justify-center flex">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4">
+                    {images.map((image, i) => (
+                        <Card key={i} className="transform transition-transform duration-300 hover:scale-105 hover:shadow-lg overflow-hidden relative rounded-md w-80 p-0 pb-4">
+                            <div className="relative">
+                                <img src={image.image} alt="" className="w-full h-40 object-cover"/>
+                            </div>
+                            <CardContent>
+                                <CardTitle className="text-xl font-semibold">
+                                    {image.label}
+                                </CardTitle>
+                                <CardDescription className="flex flex-col gap-2">
+                                    <div>
+                                        {image.country}
+                                    </div>
+                                    <div className="text-cyan-500 font-semibold">
+                                        {image.properties} properties
+                                    </div>
+                                </CardDescription>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
             </div>
         </div>
     )

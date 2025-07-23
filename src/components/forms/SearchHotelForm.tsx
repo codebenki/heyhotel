@@ -55,7 +55,7 @@ export function HotelSearchForm() {
   return (
     <Form {...form}>
     <form onSubmit={form.handleSubmit(onSubmit)} className="text-gray-700 bg-white p-2 rounded-lg space-y-2">
-        <div className="grid gap-4 sm:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-4 p-4">
             <FormField
             control={form.control}
             name="destination"
