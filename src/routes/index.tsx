@@ -1,5 +1,6 @@
 import { HotelSearchForm } from "@/components/forms/SearchHotelForm";
 import { Banner } from "@/components/Banner";
+import Promotion from "@/components/Promotion";
 
 export default function Index(){
     return (
@@ -27,6 +28,7 @@ export default function Index(){
                 </div>
             </div>
             <Banner />
+            <Promotion />
         </div>
     )
 }
