@@ -1,4 +1,4 @@
-import { HotelSearchForm } from "@/components/forms/SearchHotelForm";
+import { SearchHotelForm } from "@/components/forms/SearchHotelForm";
 import { Banner } from "@/components/Banner";
 import Promotion from "@/components/Promotion";
 import { Footer } from "@/components/Footer";
@@ -25,7 +25,7 @@ export default function Index(){
                         </div>
                         <div className="text-xl">Find your next Hotel</div>
                     </div>
-                    <HotelSearchForm />
+                    <SearchHotelForm />
                 </div>
             </div>
             <Banner />

@@ -18,6 +18,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import { useNavigate } from "@tanstack/react-router";
 
 
 const formSchema = z.object({
@@ -37,7 +38,8 @@ const formSchema = z.object({
     }),
 });
 
-export function HotelSearchForm() {
+export function SearchHotelForm() {
+    const navigate = useNavigate();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -45,11 +47,17 @@ export function HotelSearchForm() {
             checkInDate: undefined,
             checkOutDate: undefined,
             guests: undefined,
-    },
-});
+        },
+    });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Submitted values:", values);
+    const formvalues = {
+        ...values,
+        checkInDate: format(values.checkInDate, 'yyyy-MM-dd'),
+        checkOutDate: format(values.checkOutDate, 'yyyy-MM-dd'),
+    }
+    // console.log("Submitted values:", formvalues.checkInDate);
+    navigate({ to: '/hotels', search: formvalues as any })
   }
 
   return (
